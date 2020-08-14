@@ -8,6 +8,12 @@ import IconStudent from '../../../assets/study.png';
 
 const Landing = (props) => {
 
+  const styleColor = StyleSheet.create({
+    button: {
+      backgroundColor: props.color || '#fff'
+    }
+  })
+
   const { navigate } = useNavigation()
   const { goPath } = props
   const { icon } = props
@@ -20,7 +26,7 @@ const Landing = (props) => {
   return (
     <RectButton 
       onPress={handleNavigate}
-      style={[styles.button, styles.buttonPrimary]}>
+      style={[styles.button, styleColor.button]}>
         <ImageBackground 
           source={require(`../../../assets/${icon}.png`)} 
           imageStyle={{ width: 70, height: 70 }}
@@ -36,15 +42,10 @@ const styles = StyleSheet.create({
   button: {
     height: 150,
     width: "48%",
-    backgroundColor: "#333",
     borderRadius: 8,
     padding: 24,
     justifyContent: "space-between",
     alignContent: "center",
-  },
-
-  buttonPrimary: {
-    backgroundColor: "#9871f5",
   },
 
   buttonText: {
