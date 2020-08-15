@@ -1,8 +1,10 @@
 import React from 'react';
-import { StyleSheet, Image, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, ImageBackground } from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons';
 import { BorderlessButton } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native';
+
+import Button from '../Button';
 
 const HeaderNav = (props) => {
 
@@ -24,8 +26,10 @@ const HeaderNav = (props) => {
         <BorderlessButton onPress={handleGoBack} >
           <Icon name="arrow-left" color="#fff" size={24} />
         </BorderlessButton>
-
         <Icon name="more-horizontal" color="#fff" size={24} />
+      </View>
+      <View style={styles.logo} >
+        <Button  icon='Logo' title='' goPath='Landing' color='' />        
       </View>
     </>
   );
@@ -62,7 +66,18 @@ const styles = StyleSheet.create({
       { translateY: -50 }
     ],
     zIndex: 0
-  }
+  },
+
+  logo: {
+    alignItems: "center",
+    transform: [      
+      { translateY: -250 },
+      { scale: 2 }
+    ],
+    position: "relative",    
+    zIndex: 9,
+  },
+
 })
 
 export default HeaderNav;

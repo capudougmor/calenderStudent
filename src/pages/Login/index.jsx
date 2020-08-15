@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, version } from 'react';
 import { StyleSheet, Image, View, Text, TouchableOpacity } from 'react-native';
 import { BorderlessButton, TextInput, RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
@@ -64,10 +64,11 @@ const styles = StyleSheet.create({
     padding: 20,
     justifyContent: 'space-between',
     transform: [      
-      { translateY: -90 }
+      { translateY: -200 }
     ],
+    position: "relative",
   },
-
+  
   header: {
     flexDirection: "row",
     marginTop: 20,
