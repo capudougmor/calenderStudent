@@ -28,9 +28,9 @@ const HeaderNav = (props) => {
         </BorderlessButton>
         <Icon name="more-horizontal" color="#fff" size={24} />
       </View>
-      <View style={styles.logo} >
+      {/* <View style={styles.logo} >
         <Button  icon='Logo' title='' goPath='Landing' color='' />        
-      </View>
+      </View> */}
     </>
   );
 };
