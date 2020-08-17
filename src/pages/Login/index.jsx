@@ -60,18 +60,16 @@ const Login = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 20,
+    flex: 2,
+    paddingHorizontal: 20,
     justifyContent: 'space-between',
     transform: [      
-      { translateY: -200 }
+      { translateY: -60}
     ],
-    position: "relative",
   },
   
   header: {
     flexDirection: "row",
-    marginTop: 20,
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: 40,

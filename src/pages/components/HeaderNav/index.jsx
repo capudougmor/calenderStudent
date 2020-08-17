@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, ImageBackground } from 'react-native';
+import { StyleSheet, View, ImageBackground, Image } from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons';
 import { BorderlessButton } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native';
 
-import Button from '../Button';
+import logoImg from '../../../assets/Logo.png';
 
 const HeaderNav = (props) => {
 
@@ -18,66 +18,69 @@ const HeaderNav = (props) => {
   
   return (
     <>
-      <View style={styles.box}>
+      <View style={styles.container} >
+        <View style={styles.btnContent}>
+          <BorderlessButton onPress={handleGoBack} >
+            <Icon name="arrow-left" color="#fff" size={24} />
+          </BorderlessButton>
+          <Icon name="more-horizontal" color="#fff" size={24} />
+        </View>
+      </View>
+      <View style={styles.logo} >
+        <ImageBackground source={logoImg} style={{ width: 150, height: 150}} />
+      </View>
+      <View style={styles.boxGreen}>
       </View>
       <View style={styles.boxOrange}>
       </View>
-      <View style={styles.container} >
-        <BorderlessButton onPress={handleGoBack} >
-          <Icon name="arrow-left" color="#fff" size={24} />
-        </BorderlessButton>
-        <Icon name="more-horizontal" color="#fff" size={24} />
-      </View>
-      {/* <View style={styles.logo} >
-        <Button  icon='Logo' title='' goPath='Landing' color='' />        
-      </View> */}
     </>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
-    flexDirection: 'row',
-    justifyContent: "space-between",  
     backgroundColor: "#D33A3A",
-    transform: [      
-      { translateY: -250 }
-    ],
-    zIndex: 3
-    
+    alignItems: "center",
+    zIndex: 2,
   },
   
-  box: { 
-    height: 120,
+  btnContent:{
+    padding: 20,
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  
+  logo: { 
+    width: "100vw",
+    height: 80,
     backgroundColor: "#D33A3A",
-    transform: [      
-      { skewY: "-10deg" },
-      { scale: 2 }
-    ],
-    zIndex: 1
+    alignItems: "center",
+    zIndex: 3,
   },
   
   boxOrange: { 
-    height: 120,
+    width: "100vw",
+    height: 80,
+    backgroundColor: "#D33A3A",
+    transform: [      
+      { skewY: "-10deg" },
+      { translateY: -120}
+    ],
+    zIndex: 1,
+  },
+  
+  boxGreen: { 
+    width: "100vw",
+    height: 80,
     backgroundColor: "#113A3A",
     transform: [      
       { skewY: "10deg" },
-      { translateY: -50 }
+      { translateY: -40}
     ],
-    zIndex: 0
+    zIndex: 0,
   },
-
-  logo: {
-    alignItems: "center",
-    transform: [      
-      { translateY: -250 },
-      { scale: 2 }
-    ],
-    position: "relative",    
-    zIndex: 9,
-  },
-
+  
 })
 
 export default HeaderNav;

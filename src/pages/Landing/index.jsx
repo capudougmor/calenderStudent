@@ -22,7 +22,7 @@ const Landing = () => {
         toValue: 1,
         duration: 500,
       })
-    ]).start()
+    ]).start() 
       
 
   },[])

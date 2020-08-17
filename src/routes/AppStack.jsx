@@ -13,8 +13,8 @@ function AppStack() {
   return(
     <NavigationContainer>
       <Navigator screenOptions={{ headerShown: false }}>
-        <Screen name="Landing" component={Landing} />
         <Screen name="Login" component={Login} />
+        <Screen name="Landing" component={Landing} />
         <Screen name="Register" component={Register} />
 
       </Navigator>
